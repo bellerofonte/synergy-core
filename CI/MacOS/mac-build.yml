@@ -6,11 +6,11 @@ steps:
       keychain: 'temp'
     condition: eq(variables['Build.Reason'], 'Manual')
 
-  - task: CmdLine@2
+  - task: CmnLine@2
     inputs:
       script: |
-        'curl https://nixos.org/nix/install | sh'
-        '. /home/vsts/.nix-profile/etc/profile.d/nix.sh'
+        'sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume'
+        '. prefix/etc/profile.d/nix.sh'
     displayName: 'Install Nix'
 
   - task: CmdLine@2
