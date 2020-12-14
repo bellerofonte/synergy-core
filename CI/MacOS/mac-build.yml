@@ -9,8 +9,8 @@ steps:
   - task: CmnLine@2
     inputs:
       script: |
-        curl https://nixos.org/nix/install | sh
-        . /home/vsts/.nix-profile/etc/profile.d/nix.sh
+        'curl https://nixos.org/nix/install | sh'
+        '. /home/vsts/.nix-profile/etc/profile.d/nix.sh'
     displayName: 'Install Nix'
 
   - task: CmdLine@2
