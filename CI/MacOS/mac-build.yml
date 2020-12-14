@@ -14,8 +14,8 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        'pip install wheel'
-        'pip install dmgbuild'
+        pip install wheel
+        pip install dmgbuild
     displayName: 'Installing dmgbuild'
 
   - task: CmdLine@2
