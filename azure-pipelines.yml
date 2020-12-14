@@ -1,8 +1,6 @@
 trigger: none
 
 jobs:
-    #As apparently the trigger set to none doesn't work
-    condition: eq(variables['Build.Reason'], 'Manual')
 
   - job: MacOS
     strategy:
