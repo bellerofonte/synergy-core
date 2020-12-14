@@ -7,8 +7,8 @@ jobs:
       matrix:
         catalina-std:
           image: macOS-10.15
-          name: catalina
-          version: 10.14
+          platform: x86-64
+          version: 10.15
           buildType: "standard"
           prefix: "synergy"
     pool:
