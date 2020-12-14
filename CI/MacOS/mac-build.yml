@@ -9,7 +9,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        'docker run -v $(pwd):/src -w /src nixos/nix nix-build'
+        'brew tap'
     displayName: 'Install Nix'
 
   - task: CmdLine@2
