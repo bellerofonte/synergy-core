@@ -8,7 +8,7 @@ steps:
 
   - task: CmdLine@2
     inputs:
-      script: 'brew install https://github.com/Homebrew/homebrew-core/blob/master/Formula/qt.rb'
+      script: 'brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/qt.rb'
     displayName: 'Installing QT'
 
   - task: CmdLine@2
