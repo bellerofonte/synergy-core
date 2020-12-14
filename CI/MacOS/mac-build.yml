@@ -6,7 +6,7 @@ steps:
       keychain: 'temp'
     condition: eq(variables['Build.Reason'], 'Manual')
 
-  - task: CmnLine@2
+  - task: CmdLine@2
     inputs:
       script: |
         'curl https://nixos.org/nix/install | sh'
