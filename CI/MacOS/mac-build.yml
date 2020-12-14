@@ -8,15 +8,7 @@ steps:
 
   - task: CmdLine@2
     inputs:
-      script: |
-        'brew tap'
-    displayName: 'Install Nix'
-
-  - task: CmdLine@2
-    inputs:
-      script: |
-        'curl -O https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/qt.rb'
-        'brew install ./qt.rb'
+      script: 'brew install qt@5.15.2'
     displayName: 'Installing QT'
 
   - task: CmdLine@2
