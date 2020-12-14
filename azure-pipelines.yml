@@ -5,7 +5,7 @@ jobs:
   - job: MacOS
     strategy:
       matrix:
-          catalina-std:
+        catalina-std:
           image: macOS-10.15
           name: catalina
           version: 10.14
