@@ -9,8 +9,8 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        brew upgrade qt
         brew install qt
+        brew upgrade qt
     displayName: 'Installing QT'
 
   - task: CmdLine@2
