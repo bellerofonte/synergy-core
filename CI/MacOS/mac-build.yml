@@ -54,6 +54,9 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
+        export PATH="$(QT_PATH):$PATH"
+        echo $PATH
+        echo $Qt5_DIR
         cd build
         . ./version
         make -j
@@ -61,6 +64,9 @@ steps:
     displayName: 'Compiling'
     env:
       GIT_COMMIT: $(Build.SourceVersion)
+      Qt5_DIR: '/usr/local/opt/qt'
+      QT_PLUGIN_PATH: '/usr/local/opt/qt/plugins'
+      QML2_IMPORT_PATH: '/usr/local/opt/qml'
 
   - task: CmdLine@2
     inputs:
