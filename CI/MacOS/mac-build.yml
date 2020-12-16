@@ -30,6 +30,8 @@ steps:
     inputs:
       script: |
         export PATH="$(QT_PATH):$PATH"
+        echo $PATH
+        echo $Qt5_DIR
         mkdir build
         cd build
         cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=$(version) -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release ..
@@ -37,6 +39,9 @@ steps:
     condition: eq(variables['buildType'], 'standard')
     env:
       GIT_COMMIT: $(Build.SourceVersion)
+      Qt5_DIR: '/usr/local/opt/qt'
+      QT_PLUGIN_PATH: '/usr/local/opt/qt/plugins'
+      QML2_IMPORT_PATH: '/usr/local/opt/qml'
 
   - task: CmdLine@2
     inputs:
@@ -51,12 +56,11 @@ steps:
     env:
       GIT_COMMIT: $(Build.SourceVersion)
 
+
   - task: CmdLine@2
     inputs:
       script: |
         export PATH="$(QT_PATH):$PATH"
-        echo $PATH
-        echo $Qt5_DIR
         cd build
         . ./version
         make -j
@@ -64,9 +68,6 @@ steps:
     displayName: 'Compiling'
     env:
       GIT_COMMIT: $(Build.SourceVersion)
-      Qt5_DIR: '/usr/local/opt/qt'
-      QT_PLUGIN_PATH: '/usr/local/opt/qt/plugins'
-      QML2_IMPORT_PATH: '/usr/local/opt/qml'
 
   - task: CmdLine@2
     inputs:
