@@ -10,7 +10,7 @@ steps:
     inputs:
       script: |
         python3 -m pip install setuptools wheel 
-        python3 -m pip biplist
+        python3 -m pip install biplist
         python3 -m pip install py7zr==0.11.0
         python3 -m pip install aqtinstall==0.10.0
     displayName: 'Setup pip'
