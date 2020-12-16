@@ -42,9 +42,10 @@ steps:
     condition: eq(variables['buildType'], 'standard')
     env:
       GIT_COMMIT: $(Build.SourceVersion)
-      Qt5_DIR: '/usr/local/opt/qt'
-      QT_PLUGIN_PATH: '/usr/local/opt/qt/plugins'
-      QML2_IMPORT_PATH: '/usr/local/opt/qml'
+      Qt5_DIR: '/usr/local/opt/qt/5.15.2/clang_64'
+      QT_PLUGIN_PATH: '/usr/local/opt/qt/5.15.2/clang_64/plugins'
+      QML2_IMPORT_PATH: '/usr/local/opt/qt/5.15.2/clang_64/qml'
+      QT_PATH: '/usr/local/opt/qt/5.15.2/clang_64/bin'
 
   - task: CmdLine@2
     inputs:
