@@ -32,6 +32,9 @@ steps:
         export PATH="$(QT_PATH):$PATH"
         echo $PATH
         echo $Qt5_DIR
+        cd $Qt5_DIR
+        ls -l
+        cd ..
         mkdir build
         cd build
         cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=$(version) -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release ..
