@@ -9,22 +9,22 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m pip install setuptools wheel 
-        python3 -m pip install biplist
-        python3 -m pip install py7zr==0.11.0
-        python3 -m pip install aqtinstall==0.10.0
+        pip install setuptools wheel 
+        pip install biplist
+        pip install py7zr==0.11.0
+        pip install aqtinstall==0.10.0
     displayName: 'Setup pip'
 
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m aqt install 5.15.2 mac desktop -O $(Qt5_DIR)
+        aqt install 5.15.2 mac desktop -O $(Qt5_DIR)
     displayName: 'Installing QT'
 
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m pip install dmgbuild
+        pip install dmgbuild
     displayName: 'Installing dmgbuild'
 
   - task: CmdLine@2
