@@ -18,6 +18,7 @@ jobs:
     condition: eq(variables['Build.Reason'], 'Manual')
 
     variables:
+      Qt5_DIR: '/usr/local/opt/qt'
       QT_PATH: '/usr/local/opt/qt/bin'
 
     steps:
