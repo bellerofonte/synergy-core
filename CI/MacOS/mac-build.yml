@@ -22,8 +22,8 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        export PATH="$(Qt5_DIR):$(Qt5_DIR)/bin:$PATH"
-        echo $Qt5_DIR
+        export PATH="$(Qt5_DIR)/bin:$PATH"
+        export Qt5_DIR="$(Qt5_DIR)"
         mkdir build
         cd build
         cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=$(version) -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release ..
