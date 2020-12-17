@@ -19,7 +19,7 @@ jobs:
 
     variables:
       QT_VERSION: '5.15.2'
-      Qt5_DIR: '/usr/local/opt/qt/5.15.2/clang_64'
+      QT_PATH: '/usr/local/opt/qt'
 
     steps:
       - template: CI/checkout.yml

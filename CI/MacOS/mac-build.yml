@@ -16,16 +16,13 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m aqt install $(QT_VERSION) mac desktop -O $(Qt5_DIR)
+        python3 -m aqt install $(QT_VERSION) mac desktop -O '/usr/local/opt/qt'
     displayName: 'Installing QT'
 
   - task: CmdLine@2
     inputs:
       script: |
-        export PATH="$(Qt5_DIR)/bin:$PATH"
-        export Qt5_DIR="$(Qt5_DIR)"
-        echo $Qt5_DIR;
-        echo "$(Qt5_DIR)"
+        export PATH="$(QT_PATH):$PATH"
         mkdir build
         cd build
         cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=$(version) -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release ..
@@ -33,6 +30,10 @@ steps:
     condition: eq(variables['buildType'], 'standard')
     env:
       GIT_COMMIT: $(Build.SourceVersion)
+      Qt5_DIR: '/usr/local/opt/qt/5.15.2/clang_64'
+      QT_PLUGIN_PATH: '/usr/local/opt/qt/5.15.2/clang_64/plugins'
+      QML2_IMPORT_PATH: '/usr/local/opt/qt/5.15.2/clang_64/qml'
+      QT_PATH: '/usr/local/opt/qt/5.15.2/clang_64/bin'
 
   - task: CmdLine@2
     inputs:
