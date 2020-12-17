@@ -10,7 +10,7 @@ steps:
     inputs:
       script: |
         python3 -m pip install dmgbuild
-        python3 -m pip install aqtinstall==0.10.0
+        python3 -m pip install aqtinstall
     displayName: 'Install utilities'
 
   - task: CmdLine@2
