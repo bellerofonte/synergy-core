@@ -22,7 +22,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        export PATH="$(QT_PATH):$PATH"
+        export PATH="$(Qt5_DIR):$(Qt5_DIR)/bin:$PATH"
         mkdir build
         cd build
         cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=$(version) -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release ..
@@ -34,7 +34,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        export PATH="$(QT_PATH):$PATH"
+        export PATH="$(Qt5_DIR):$(Qt5_DIR)/bin:$PATH"
         export SYNERGY_ENTERPRISE=1
         mkdir build
         cd build
