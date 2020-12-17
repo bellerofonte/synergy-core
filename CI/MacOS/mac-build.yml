@@ -16,7 +16,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m aqt install ${{ QT_VERSION }} mac desktop -O ${{ QT_PATH }}
+        python3 -m aqt install $(QT_VERSION) mac desktop -O $(QT_PATH)
     displayName: 'Installing QT'
 
   - task: CmdLine@2
