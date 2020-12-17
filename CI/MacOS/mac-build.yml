@@ -16,7 +16,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        python3 -m aqt install 5.15.2 mac desktop -O $(Qt5_DIR)
+        python3 -m aqt install $(QT_VERSION) mac desktop -O $(Qt5_DIR)
     displayName: 'Installing QT'
 
   - task: CmdLine@2
