@@ -22,7 +22,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        echo "$(Qt5_DIR)""
+        echo "$(Qt5_DIR)"
         export PATH="$(QT_PATH):$PATH"
         mkdir build
         cd build
