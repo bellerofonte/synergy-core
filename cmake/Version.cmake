@@ -7,7 +7,8 @@ cmake_minimum_required (VERSION 3.4)
 set (SYNERGY_VERSION_MAJOR 1)
 set (SYNERGY_VERSION_MINOR 13)
 set (SYNERGY_VERSION_PATCH 0)
-set (SYNERGY_VERSION_STAGE "rc2")
+set (SYNERGY_BUILD_NUMBER 1)
+set (SYNERGY_VERSION_STAGE "test")
 
 #
 # Version from CI
@@ -54,8 +55,6 @@ endif()
 
 if (DEFINED ENV{BUILD_NUMBER})
     set (SYNERGY_BUILD_NUMBER $ENV{BUILD_NUMBER})
-else()
-    set (SYNERGY_BUILD_NUMBER 1)
 endif()
 
 string (TIMESTAMP SYNERGY_BUILD_DATE "%Y%m%d" UTC)

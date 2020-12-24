@@ -9,6 +9,12 @@ steps:
   - task: CmdLine@2
     inputs:
       script: | 
+        python3 CI/build_version.py
+    displayName: 'Update Version.cmake'
+
+  - task: CmdLine@2
+    inputs:
+      script: | 
         python3 -m pip install dmgbuild
         python3 -m pip install aqtinstall
     displayName: 'Installing utilities'
@@ -114,7 +120,7 @@ steps:
       sshEndpoint: 'Azure on Sandor'
       sourceFolder: '$(Build.Repository.LocalPath)/pkg'
       contents: '*'
-      targetFolder: 'synergy-core/v1-core-$(buildType)/$(SYNERGY_VERSION)/$(SYNERGY_VERSION_STAGE)/$(SYNERGY_REVISION)/'
+      targetFolder: 'synergy-core/v1-core-$(buildType)/$(SYNERGY_VERSION)/$(SYNERGY_VERSION_STAGE)/b$(SYNERGY_BUILD_NUMBER)-$(SYNERGY_REVISION)/'
       readyTimeout: '20000'
     displayName: 'Send Package to sandor'
     condition: eq(variables['Build.Reason'], 'Manual')
