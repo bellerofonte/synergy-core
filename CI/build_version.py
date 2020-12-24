@@ -99,7 +99,7 @@ def updateVersionFile(number):
    fp.close()
 
    fp = open('cmake/Version.cmake', 'wt')
-   fp.write(content.replace('set (SYNERGY_BUILD_NUMBER 1)', 'set (SYNERGY_BUILD_NUMBER ' + str(number) + ')'))
+   fp.write(content.replace('set (SYNERGY_VERSION_BUILD 1)', 'set (SYNERGY_VERSION_BUILD ' + str(number) + ')'))
    fp.close()
 
 if __name__ == '__main__':

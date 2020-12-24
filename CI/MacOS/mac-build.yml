@@ -121,7 +121,7 @@ steps:
       sshEndpoint: 'Azure on Sandor'
       sourceFolder: '$(Build.Repository.LocalPath)/pkg'
       contents: '*'
-      targetFolder: 'synergy-core/v1-core-$(buildType)/$(SYNERGY_VERSION)/$(SYNERGY_VERSION_STAGE)/b$(SYNERGY_BUILD_NUMBER)-$(SYNERGY_REVISION)/'
+      targetFolder: 'synergy-core/v1-core-$(buildType)/$(SYNERGY_VERSION)/$(SYNERGY_VERSION_STAGE)/b$(SYNERGY_VERSION_BUILD)-$(SYNERGY_REVISION)/'
       readyTimeout: '20000'
     displayName: 'Send Package to sandor'
     condition: eq(variables['Build.Reason'], 'Manual')
